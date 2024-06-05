@@ -42,7 +42,7 @@ void ajouter_emprunteurs(List_emprunteur *L, char N[20], char PN[20], char AE[50
         L->fin = Nouvel_emprunt;
     }
     L->taille++;
-    printf("L'emprunteur %s %s a été ajouté avec succès.\n", N, PN);
+    printf("L'emprunteur %s %s a Ã©tÃ© ajoutÃ© avec succÃ¨s.\n", N, PN);
 }
 
 void supprimer_emprunteur(List_emprunteur *L, char nom[20], char prenom[20]) {
@@ -63,7 +63,7 @@ void supprimer_emprunteur(List_emprunteur *L, char nom[20], char prenom[20]) {
         precedent = courant;
         courant = courant->next;
     }
-    printf("L'emprunteur %s %s n'a pas été trouvé.\n", nom, prenom);
+    printf("L'emprunteur %s %s n'a pas Ã©tÃ© trouvÃ©.\n", nom, prenom);
 }
 
 void afficherListeEmprunteurs(List_emprunteur *L) {
@@ -73,7 +73,7 @@ void afficherListeEmprunteurs(List_emprunteur *L) {
         emprunteurs *courant = L->debut;
         while (courant != NULL) {
             printf("Nom : %s\n", courant->nom);
-            printf("Prénom : %s\n", courant->prenom);
+            printf("PrÃ©nom : %s\n", courant->prenom);
             printf("Adresse e-mail : %s\n", courant->adresse_email);
             courant = courant->next;
         }
@@ -149,7 +149,7 @@ void afficherLivresParAuteur(Pile_Livres *pile, char auteur[20]) {
     }
 
     if (!found) {
-        printf("L'auteur %s n'a pas d'œuvres répertoriées.\n", auteur);
+        printf("L'auteur %s n'a pas d'Å“uvres rÃ©pertoriÃ©es.\n", auteur);
     }
 }
 
@@ -158,13 +158,13 @@ void emprunter_livre(Pile_Livres *pile, char titre[20]) {
 
     while (courant != NULL) {
         if (strcmp(courant->titre, titre) == 0) {
-            printf("Le livre %s a été emprunté.\n", titre);
+            printf("Le livre %s a Ã©tÃ© empruntÃ©.\n", titre);
             supprimer_livre(pile, titre);
             return;
         }
         courant = courant->next;
     }
-    printf("Le livre %s n'a pas été trouvé.\n", titre);
+    printf("Le livre %s n'a pas Ã©tÃ© trouvÃ©.\n", titre);
 }
 
 void rendre_livre(Pile_Livres *pile, char titre[20]) {
@@ -184,8 +184,8 @@ int main() {
 
     do {
         printf("**************************************************\n");
-        printf("Taper 1 pour lister les paramétres d'emprunteurs :\n");
-        printf("Taper 2 pour lister les paramétres des livres :\n");
+        printf("Taper 1 pour lister les paramÃ©tres d'emprunteurs :\n");
+        printf("Taper 2 pour lister les paramÃ©tres des livres :\n");
         printf("Taper 3 pour quitter\n");
         printf("*****************************************************\n");
         printf("Saisissez votre choix :");
@@ -207,7 +207,7 @@ int main() {
                     case 1:{
                         printf("Entrez le nom de l'emprunteur :");
                         scanf(" %[^\n]s", nom);
-                        printf("Entrez le prénom de l'emprunteur :");
+                        printf("Entrez le prÃ©nom de l'emprunteur :");
                         scanf(" %s", prenom);
                         printf("Entrez l'adresse e-mail de l'emprunteur :");
                         scanf(" %s", adresse_email);
@@ -218,9 +218,9 @@ int main() {
                         afficherListeEmprunteurs(&list);
                         break;}
                     case 3:{
-                        printf("Entrez le nom de l'emprunteur à supprimer :");
+                        printf("Entrez le nom de l'emprunteur Ã  supprimer :");
                         scanf(" %s", nom);
-                        printf("Entrez le prénom de l'emprunteur à supprimer :");
+                        printf("Entrez le prÃ©nom de l'emprunteur Ã  supprimer :");
                         scanf(" %s", prenom);
                         supprimer_emprunteur(&list, nom, prenom);
                         break;}
@@ -250,7 +250,7 @@ int main() {
                         scanf("%d", &n);
                         for (int i = 0; i < n; i++) {
                             printf("***************************************\n");
-                            printf("Entrer les détails du livre numéro %d :\n", i + 1);
+                            printf("Entrer les dÃ©tails du livre numÃ©ro %d :\n", i + 1);
                             printf("***************************************\n");
                             printf("Titre :");
                             scanf(" %[^\n]s", titre);
@@ -277,12 +277,12 @@ int main() {
                         printf("Le nombre de livres est : %d\n", pile.taille);
                         break;}
                     case 5:{
-                        printf("Saisissez le titre du livre à emprunter :");
+                        printf("Saisissez le titre du livre Ã  emprunter :");
                         scanf(" %[^\n]s", titre);
                         emprunter_livre(&pile, titre);
                         break;}
                     case 6:{
-                        printf("Saisissez le titre du livre à rendre :");
+                        printf("Saisissez le titre du livre Ã  rendre :");
                         scanf(" %[^\n]s", titre);
                         rendre_livre(&pile, titre);
                         break;}
