@@ -338,3 +338,7 @@ int main() {
     } while (choix != 3);
     return 0;
 }
+
+Exécution du code + Conclusion:
+-
+Voir le lien suivant: https://youtu.be/20jGGgL_z44
