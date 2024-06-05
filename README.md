@@ -43,9 +43,9 @@ Notre programme offre plusieurs fonctionnalités pour interagir avec la biblioth
 
 Présentation du Code:
 -
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+- #include <stdio.h>
+- #include <stdlib.h>
+- #include <string.h>
 
 typedef struct {
     char titre[50];
